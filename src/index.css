@@ -1,12 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-body, html {
+body,
+html {
   font-family: 'Montserrat', sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f5f6fa;
 }
 
 * {
   margin: 0;
   padding: 0;
+}
+
+.header {
+  background-color: white;
+  border-bottom: 1px solid grey;
+  padding: 20px 0;
+}
+
+.nav-bar {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-bar .nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-bar .nav-links .logo {
+  color: #0290ff;
+  font-size: 25px;
+}
+
+.nav-bar .nav-links .book-cat {
+  color: grey;
+  font-size: 15px;
+}
+
+.user-circle {
+  color: #0290ff;
 }

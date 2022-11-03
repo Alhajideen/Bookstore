@@ -1,19 +1,22 @@
 import React from 'react';
 import { CgProfile } from 'react-icons/cg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 function Nav() {
   return (
     <div>
-      
       <header className="header">
         <nav className="nav-bar">
           <ul className="nav-links">
-            <li className="logo">bookstore CMS</li>
-            <li>BOOKS</li>
-            <li>CATEGORIES</li>
+            <li className="logo">Bookstore CMS</li>
+            <li className="book-cat">BOOKS</li>
+            <li className="book-cat">CATEGORIES</li>
           </ul>
           <div className="avatar">
-            <img src="" alt="display picture" />
+            <span>
+              <FontAwesomeIcon className="user-circle" icon={faUserCircle} />
+            </span>
           </div>
         </nav>
       </header>
