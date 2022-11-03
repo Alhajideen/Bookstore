@@ -5,10 +5,12 @@ import Nav from './Components/Nav';
 function App() {
   return (
     <div className="App">
-      <Nav />
-      <Routes>
-        <Route path="/" element={<BookContainer />} />
-      </Routes>
+      <section className="book-app">
+        <Nav />
+        <Routes>
+          <Route path="/" element={<BookContainer />} />
+        </Routes>
+      </section>
     </div>
   );
 }

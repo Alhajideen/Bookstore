@@ -7,8 +7,8 @@ function BookContainer() {
     <div>
       <section className="bookContainer">
         <div className="book-details">
-          <h3>Book Category</h3>
-          <Book title={'Book Title'} author={'Book Author'} />
+          <h3>Empty</h3>
+          <Book title={'Empty'} author={'Empty'} />
         </div>
         <div className="book-actions">
           <button>Remove</button>

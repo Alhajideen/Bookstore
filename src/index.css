@@ -5,7 +5,6 @@ html {
   font-family: 'Montserrat', sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: #f5f6fa;
 }
 
 * {
@@ -13,14 +12,29 @@ html {
   padding: 0;
 }
 
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f5f6fa;
+  display: flex;
+  align-items: center;
+}
+
+.book-app {
+  width: 90%;
+  height: 90%;
+  background-color: #fafafa;
+  margin: auto;
+}
+
 .header {
   background-color: white;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid rgb(211, 211, 211);
   padding: 20px 0;
 }
 
 .nav-bar {
-  width: 80%;
+  width: 90%;
   margin: auto;
   display: flex;
   justify-content: space-between;
