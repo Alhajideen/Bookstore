@@ -1,6 +1,6 @@
 import React from 'react';
 import Book from './Book';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import InputBook from './InputBook';
 
 function BookContainer() {
   return (
@@ -14,6 +14,9 @@ function BookContainer() {
           <button>Remove</button>
         </div>
       </section>
+      <div className="add book">
+        <InputBook />
+      </div>
     </div>
   );
 }

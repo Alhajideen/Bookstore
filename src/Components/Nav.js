@@ -2,6 +2,7 @@ import React from 'react';
 import { CgProfile } from 'react-icons/cg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 function Nav() {
   return (
@@ -10,8 +11,12 @@ function Nav() {
         <nav className="nav-bar">
           <ul className="nav-links">
             <li className="logo">Bookstore CMS</li>
-            <li className="book-cat">BOOKS</li>
-            <li className="book-cat">CATEGORIES</li>
+            <Link to={'/'}>
+              <li className="book-cat">BOOKS</li>
+            </Link>
+            <Link to={'/categories'}>
+              <li className="book-cat">CATEGORIES</li>
+            </Link>
           </ul>
           <div className="avatar">
             <span>

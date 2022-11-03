@@ -52,6 +52,10 @@ html {
   font-size: 25px;
 }
 
+.nav-bar .nav-links a {
+  text-decoration: none;
+}
+
 .nav-bar .nav-links .book-cat {
   color: grey;
   font-size: 15px;
@@ -59,4 +63,6 @@ html {
 
 .user-circle {
   color: #0290ff;
+  width: 30px;
+  height: 30px;
 }
