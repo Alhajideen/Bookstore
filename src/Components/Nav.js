@@ -1,8 +1,10 @@
 import React from 'react';
+import { CgProfile } from 'react-icons/cg';
 
 function Nav() {
   return (
     <div>
+      
       <header className="header">
         <nav className="nav-bar">
           <ul className="nav-links">
