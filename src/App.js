@@ -1,11 +1,12 @@
+import { Routes } from 'react-router-dom';
 import Nav from './Components/Nav';
 
 function App() {
   return (
     <div className="App">
-      <h1>
+      <Routes>
         <Nav />
-      </h1>
+      </Routes>
     </div>
   );
 }
