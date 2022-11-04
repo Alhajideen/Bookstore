@@ -23,19 +23,17 @@ function BookContainer() {
   return (
     <div>
       <section className="bookContainer">
-        {bookArr.map((book) => {
-          return (
-            <>
-              <div className="book-details">
-                <h3>Empty</h3>
-                <Book props={book} />
-              </div>
-              <div className="book-actions">
-                <button type="button">Remove</button>
-              </div>
-            </>
-          );
-        })}
+        {bookArr.map((book) => (
+          <>
+            <div className="book-details">
+              <h3>Empty</h3>
+              <Book props={book} />
+            </div>
+            <div className="book-actions">
+              <button type="button">Remove</button>
+            </div>
+          </>
+        ))}
       </section>
       <div className="add book">
         <InputBook />
