@@ -1,18 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  value: 0,
-};
+const initialState = [];
 
 export const bookSlice = createSlice({
-  name: 'counter',
-  initialState: [],
+  name: 'book',
+  initialState,
   reducers: {
-    addBook: (state) => {
-      state.value += 1;
+    addBook: (state, action) => {
+      state.push(action.payload);
     },
-    removeBook: (state) => {
-      state.value -= 1;
+    removeBook: (state, action) => {
+      state.splice(action.payload);
     },
   },
 });
