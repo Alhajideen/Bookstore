@@ -6,14 +6,14 @@ const initialState = {
 
 export const bookSlice = createSlice({
   name: 'counter',
-  initialState,
+  initialState: [],
   reducers: {
     addBook: (state) => {
       state.value += 1;
     },
     removeBook: (state) => {
       state.value -= 1;
-    }
+    },
   },
 });
 
