@@ -6,7 +6,7 @@ export const categorySlice = createSlice({
   name: 'book',
   initialState,
   reducers: {
-    checkStatus: (state) => [...state, { msg: 'Under Construction' }],
+    checkStatus: (state, action) => [...state, action.payload],
   },
 });
 
