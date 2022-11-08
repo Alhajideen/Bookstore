@@ -11,7 +11,7 @@ function BookContainer() {
         {bookArr.map((book) => (
           <div key={book.id}>
             <div className="book-details">
-              <h3>Empty</h3>
+              <h3>{book.category}</h3>
               <Book props={book} />
             </div>
             <div className="book-actions">
