@@ -3,7 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { checkStatus } from '../redux/categories/categories';
 
 function Category() {
-
+  const dispatch = useDispatch();
+  const info = useSelector((state) => state.categories);
+  const construction = info[0];
   return (
     <div>
       <h2>{construction}</h2>
