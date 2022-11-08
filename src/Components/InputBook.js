@@ -6,14 +6,12 @@ import { addBook } from '../redux/books/books';
 function InputBook() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const [cat, setCat] = useState('');
   const dispatch = useDispatch();
   const handleAdd = () => {
     const newBook = {
       id: uuid(),
       title,
       author,
-      category: cat,
     };
     dispatch(addBook(newBook));
   };
@@ -34,14 +32,6 @@ function InputBook() {
             placeholder="Book Author"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
-          />
-        </div>
-        <div className="book-cat">
-          <input
-            type="text"
-            placeholder="Book Category"
-            value={cat}
-            onChange={(e) => setCat(e.target.value)}
           />
         </div>
         <div className="add-btn">

@@ -13,11 +13,13 @@ function BookContainer() {
         {bookArr.map((book) => (
           <div key={book.id}>
             <div className="book-details">
-              <h3>{book.category}</h3>
               <Book props={book} />
             </div>
             <div className="book-actions">
-              <button type="button" onClick={() => dispatch(removeBook(book.id))}>
+              <button
+                type="button"
+                onClick={() => dispatch(removeBook(book.id))}
+              >
                 Remove
               </button>
             </div>
