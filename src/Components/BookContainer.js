@@ -1,10 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Book from './Book';
 import InputBook from './InputBook';
+import { removeBook } from '../redux/books/books';
 
 function BookContainer() {
   const bookArr = useSelector((state) => state.book);
+  const dispatch = useDispatch();
   return (
     <div>
       <section className="bookContainer">
@@ -15,7 +17,9 @@ function BookContainer() {
               <Book props={book} />
             </div>
             <div className="book-actions">
-              <button type="button">Remove</button>
+              <button type="button" onClick={() => dispatch(removeBook(book.id))}>
+                Remove
+              </button>
             </div>
           </div>
         ))}
