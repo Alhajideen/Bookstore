@@ -4,17 +4,7 @@ import { v4 as uuid } from 'uuid';
 import { addBook } from '../redux/books/books';
 
 function InputBook() {
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const dispatch = useDispatch();
-  const handleAdd = () => {
-    const newBook = {
-      id: uuid(),
-      title,
-      author,
-    };
-    dispatch(addBook(newBook));
-  };
+
   return (
     <div>
       <form className="input-book">
