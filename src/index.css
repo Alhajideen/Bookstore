@@ -1,13 +1,68 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body,
+html {
+  font-family: 'Montserrat', sans-serif;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f5f6fa;
+  display: flex;
+  align-items: center;
+}
+
+.book-app {
+  width: 90%;
+  height: 90%;
+  background-color: #fafafa;
+  margin: auto;
+}
+
+.header {
+  background-color: white;
+  border-bottom: 1px solid rgb(211, 211, 211);
+  padding: 20px 0;
+}
+
+.nav-bar {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-bar .nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-bar .nav-links .logo {
+  color: #0290ff;
+  font-size: 25px;
+}
+
+.nav-bar .nav-links a {
+  text-decoration: none;
+}
+
+.nav-bar .nav-links .book-cat {
+  color: grey;
+  font-size: 15px;
+}
+
+.user-circle {
+  color: #0290ff;
+  width: 30px;
+  height: 30px;
 }
