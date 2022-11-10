@@ -7,23 +7,16 @@ import axios from 'axios';
 
 export const getBooks = createAsyncThunk('GetBooks', () => {
   const data = fetch(
-    'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AvIE67KLnFDsdhR2CWwG/books',
+    'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AvIE67KLnFDsdhR2CWwG/books'
   ).then((res) => res.json());
-
   return data;
 });
 
 export const addBooks = createAsyncThunk('addBooks', async (obj) => {
-  // const obj = {
-  //   item_id: 'item1',
-  //   title: 'The Great Gatsby',
-  //   author: 'John Smith',
-  //   category: 'Fiction',
-  // };
   try {
     const data = await axios.post(
       'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AvIE67KLnFDsdhR2CWwG/books',
-      obj,
+      obj
     );
     console.log(data);
     return data.data;
@@ -32,25 +25,19 @@ export const addBooks = createAsyncThunk('addBooks', async (obj) => {
     return err;
   }
 });
+export const removeBooks = createAsyncThunk('removeBook', async (id) => {
+  try {
+    const data = await axios.delete(
+      'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AvIE67KLnFDsdhR2CWwG/books/' +
+        id
+    );
+    return data.data;
+  } catch (err) {
+    console.log(err);
+    return err;
+  }
+});
 
-// const initialState = [
-//   {
-//     id: uuidv4(),
-//     title: 'The Return of Ikenga',
-//     author: 'Chukwuemeka Ohuka',
-//   },
-//   {
-//     id: uuidv4(),
-//     title: 'Our Husband has gone Mad again',
-//     author: 'Onoja Victor',
-//   },
-//   {
-//     id: uuidv4(),
-//     title: 'Chike and the River',
-//     author: 'Chinua Achebe',
-//   },
-// ];
-/* eslint-disable no-param-reassign */
 export const bookSlice = createSlice({
   name: 'book',
   initialState: {
@@ -97,8 +84,6 @@ export const bookSlice = createSlice({
         ...state,
         loading: payload,
       }));
-    // [addBooks.fulfilled]: (state, action) => [...state.books, action.payload],
-    // [addBooks.fulfilled]: ,
   },
 });
 /* eslint-disable no-param-reassign */
