@@ -7,7 +7,7 @@ import axios from 'axios';
 
 export const getBooks = createAsyncThunk('GetBooks', () => {
   const data = fetch(
-    'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AvIE67KLnFDsdhR2CWwG/books'
+    'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AvIE67KLnFDsdhR2CWwG/books',
   ).then((res) => res.json());
   return data;
 });
@@ -16,7 +16,7 @@ export const addBooks = createAsyncThunk('addBooks', async (obj) => {
   try {
     const data = await axios.post(
       'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AvIE67KLnFDsdhR2CWwG/books',
-      obj
+      obj,
     );
     console.log(data);
     return data.data;
@@ -25,11 +25,11 @@ export const addBooks = createAsyncThunk('addBooks', async (obj) => {
     return err;
   }
 });
-export const removeBooks = createAsyncThunk('removeBook', async (id) => {
+export const removeBook = createAsyncThunk('removeBook', async (id) => {
   try {
     const data = await axios.delete(
-      'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AvIE67KLnFDsdhR2CWwG/books/' +
-        id
+      `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AvIE67KLnFDsdhR2CWwG/books/${
+        id}`,
     );
     return data.data;
   } catch (err) {
@@ -37,27 +37,13 @@ export const removeBooks = createAsyncThunk('removeBook', async (id) => {
     return err;
   }
 });
-
+/* eslint-disable no-param-reassign */
 export const bookSlice = createSlice({
   name: 'book',
   initialState: {
     books: [],
     loading: false,
     error: null,
-  },
-  reducers: {
-    addBook(state, action) {
-      const newBook = action.payload;
-      state.books.push({
-        id: newBook.id,
-        title: newBook.title,
-        author: newBook.author,
-      });
-    },
-    removeBook: (state, action) => {
-      const newBooks = [...state.filter((book) => book.id !== action.payload)];
-      return newBooks;
-    },
   },
   extraReducers: (Builder) => {
     Builder.addCase(getBooks.pending, (state) => {
@@ -83,13 +69,15 @@ export const bookSlice = createSlice({
       .addCase(addBooks.fulfilled, (state, { payload }) => ({
         ...state,
         loading: payload,
-      }));
+      }))
+      .addCase(removeBook.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      });
   },
 });
 /* eslint-disable no-param-reassign */
 
 export const selectAllBooks = (state) => state.book;
-
-export const { addBook, removeBook } = bookSlice.actions;
 
 export default bookSlice.reducer;
