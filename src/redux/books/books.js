@@ -19,6 +19,7 @@ export const addBooks = createAsyncThunk('addBooks', async (obj) => {
     return err;
   }
 });
+
 export const removeBook = createAsyncThunk('removeBook', async (id) => {
   try {
     const data = await axios.delete(
@@ -29,6 +30,7 @@ export const removeBook = createAsyncThunk('removeBook', async (id) => {
     return err;
   }
 });
+
 /* eslint-disable no-param-reassign */
 export const bookSlice = createSlice({
   name: 'book',

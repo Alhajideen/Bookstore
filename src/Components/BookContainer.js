@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getBooks, removeBook, selectAllBooks } from '../redux/books/books';
 import Book from './Book';
 import InputBook from './InputBook';
-// import { removeBook } from '../redux/books/books';
-// import { getBooks } from '../redux/books/books';
 
 function BookContainer() {
   const { books } = useSelector(selectAllBooks);
