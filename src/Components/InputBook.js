@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { addBooks, getBooks } from '../redux/books/books';
 
 function InputBook() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [cat, setCat] = useState('');
   const dispatch = useDispatch();
   const handleAdd = () => {
     const newBook = {
-      id: uuid(),
+      item_id: uuid(),
       title,
       author,
+      category: cat,
     };
-    dispatch(addBook(newBook));
+    dispatch(addBooks(newBook));
+    setTimeout(() => {
+      dispatch(getBooks());
+    }, 1000);
   };
   return (
     <div>
@@ -34,8 +39,16 @@ function InputBook() {
             onChange={(e) => setAuthor(e.target.value)}
           />
         </div>
+        <div className="book-cat">
+          <input
+            type="text"
+            placeholder="Book Category"
+            value={cat}
+            onChange={(e) => setCat(e.target.value)}
+          />
+        </div>
         <div className="add-btn">
-          <button type="button" onClick={handleAdd}>
+          <button type="button" onClick={() => handleAdd()}>
             Add Book
           </button>
         </div>
