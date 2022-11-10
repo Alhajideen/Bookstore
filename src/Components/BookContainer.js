@@ -11,7 +11,7 @@ function BookContainer() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBooks());
-  }, []);
+  }, [dispatch]);
 
   const handleRemove = (id) => {
     dispatch(removeBook(id));

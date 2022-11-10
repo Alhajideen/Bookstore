@@ -15,7 +15,6 @@ function InputBook() {
       author,
       category: cat,
     };
-    console.log(newBook);
     dispatch(addBooks(newBook));
     setTimeout(() => {
       dispatch(getBooks());
