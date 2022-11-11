@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { checkStatus } from '../redux/categories/categories';
 
-function Category() {
+const Category = () => {
   const dispatch = useDispatch();
   const info = useSelector((state) => state.categories);
   const construction = info[0];
@@ -17,6 +17,6 @@ function Category() {
       </button>
     </div>
   );
-}
+};
 
 export default Category;

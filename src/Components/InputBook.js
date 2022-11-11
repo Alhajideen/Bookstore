@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 import { addBooks, addBook } from '../redux/books/books';
 
-function InputBook() {
+const InputBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [cat, setCat] = useState('');
@@ -56,6 +56,6 @@ function InputBook() {
       </form>
     </div>
   );
-}
+};
 
 export default InputBook;

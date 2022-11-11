@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-function Nav() {
+const Nav = () => {
   return (
     <div>
       <header className="header">
@@ -26,6 +26,6 @@ function Nav() {
       </header>
     </div>
   );
-}
+};
 
 export default Nav;

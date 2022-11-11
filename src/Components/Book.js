@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Book({ props }) {
+const Book = ({ props }) => {
   return (
     <div>
       <div className="book-container">
@@ -11,6 +11,6 @@ function Book({ props }) {
       </div>
     </div>
   );
-}
+};
 
 export default Book;

@@ -3,7 +3,7 @@ import BookContainer from './Components/BookContainer';
 import Category from './Components/Category';
 import Nav from './Components/Nav';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <section className="book-app">
@@ -15,6 +15,6 @@ function App() {
       </section>
     </div>
   );
-}
+};
 
 export default App;
