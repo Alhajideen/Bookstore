@@ -3,18 +3,16 @@ import BookContainer from './Components/BookContainer';
 import Category from './Components/Category';
 import Nav from './Components/Nav';
 
-const App = () => {
-  return (
-    <div className="App">
-      <section className="book-app">
-        <Nav />
-        <Routes>
-          <Route path="/" element={<BookContainer />} />
-          <Route path="/categories" element={<Category />} />
-        </Routes>
-      </section>
-    </div>
-  );
-};
+const App = () => (
+  <div className="App">
+    <section className="book-app">
+      <Nav />
+      <Routes>
+        <Route path="/" element={<BookContainer />} />
+        <Route path="/categories" element={<Category />} />
+      </Routes>
+    </section>
+  </div>
+);
 
 export default App;
