@@ -24,9 +24,9 @@ function BookContainer() {
         {books.map((book) => (
           <div className="book-items" key={book.id}>
             <div className="book-ppt">
-              <div>
+              <div className="a-book">
                 <div className="book-details">
-                  <h3>{book.category}</h3>
+                  <h3 className="book-category">{book.category}</h3>
                   <Book props={book} />
                 </div>
                 <div className="book-actions">
@@ -40,17 +40,17 @@ function BookContainer() {
                 </div>
               </div>
               <div className="progress-bar">
-                <div className="circular-progress">
-                  <div className="progress-stats">
-                    <p>65%</p>
-                    <p>Completed</p>
-                  </div>
+                <div className="circular-progress" />
+                <div className="progress-stats">
+                  <p className="percentage">65%</p>
+                  <p className="completed">Completed</p>
                 </div>
               </div>
+              <div className="box-border" />
               <div className="current">
-                <p>CURRENT CHAPTER</p>
-                <p>CUhapter 17</p>
-                <button type="button">UPDATE PROGRESS</button>
+                <p className="current-chapter">CURRENT CHAPTER</p>
+                <p className="chapter">Chapter 17</p>
+                <button type="button" className="update-btn">UPDATE PROGRESS</button>
               </div>
             </div>
           </div>
