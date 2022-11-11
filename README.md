@@ -8,9 +8,9 @@
 
 - React js
 
-## Live Demo (if available)
+## Live Demo 
 
-[Available Soon](https://livedemo.com)
+[Click here to see live demo](https://bookstore-mvp.netlify.app/)
 
 - To get a local copy up and running follow these simple example steps.
 
