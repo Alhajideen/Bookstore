@@ -39,6 +39,22 @@ export const bookSlice = createSlice({
     loading: false,
     error: null,
   },
+  reducers: {
+    addBook(state, action) {
+      const newBook = action.payload;
+      state.books.push({
+        id: newBook.id,
+        title: newBook.title,
+        author: newBook.author,
+        category: newBook.category,
+      });
+    },
+    removeBooks(state, action) {
+      const bookId = action.payload;
+      const filterBooks = state.books.filter((book) => book.id !== bookId);
+      return { books: filterBooks };
+    },
+  },
   extraReducers: (Builder) => {
     Builder.addCase(getBooks.pending, (state) => {
       state.loading = true;
@@ -69,6 +85,8 @@ export const bookSlice = createSlice({
   },
 });
 /* eslint-disable no-param-reassign */
+
+export const { addBook, removeBooks } = bookSlice.actions;
 
 export const selectAllBooks = (state) => state.book;
 

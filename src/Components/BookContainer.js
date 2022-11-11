@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getBooks, removeBook, selectAllBooks } from '../redux/books/books';
+import {
+  getBooks, removeBook, removeBooks, selectAllBooks,
+} from '../redux/books/books';
 import Book from './Book';
 import InputBook from './InputBook';
 
@@ -13,9 +15,10 @@ function BookContainer() {
 
   const handleRemove = (id) => {
     dispatch(removeBook(id));
-    setTimeout(() => {
-      dispatch(getBooks());
-    }, 1000);
+    dispatch(removeBooks(id));
+    // setTimeout(() => {
+    //   dispatch(getBooks());
+    // }, 1000);
   };
 
   return (

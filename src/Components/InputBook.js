@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
-import { addBooks, getBooks } from '../redux/books/books';
+import { addBooks, addBook } from '../redux/books/books';
 
 function InputBook() {
   const [title, setTitle] = useState('');
@@ -16,9 +16,7 @@ function InputBook() {
       category: cat,
     };
     dispatch(addBooks(newBook));
-    setTimeout(() => {
-      dispatch(getBooks());
-    }, 1000);
+    dispatch(addBook(newBook));
   };
   return (
     <div className="input-form">
