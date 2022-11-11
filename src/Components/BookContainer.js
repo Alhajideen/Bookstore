@@ -50,12 +50,15 @@ function BookContainer() {
               <div className="current">
                 <p className="current-chapter">CURRENT CHAPTER</p>
                 <p className="chapter">Chapter 17</p>
-                <button type="button" className="update-btn">UPDATE PROGRESS</button>
+                <button type="button" className="update-btn">
+                  UPDATE PROGRESS
+                </button>
               </div>
             </div>
           </div>
         ))}
       </section>
+      <div className="divide-border" />
       <div className="add book">
         <InputBook />
       </div>
