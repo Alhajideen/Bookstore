@@ -42,7 +42,7 @@ function InputBook() {
             onChange={(e) => setAuthor(e.target.value)}
           />
         </div>
-        <div className="book-cat">
+        <div className="book-categ">
           <input
             type="text"
             placeholder="Book Category"
