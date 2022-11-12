@@ -13,7 +13,6 @@ html {
 }
 
 .App {
-  width: 100vw;
   height: auto;
   background-color: #f5f6fa;
   display: flex;
@@ -272,4 +271,53 @@ html {
   letter-spacing: 0.5px;
   color: #fff;
   margin-top: 20px;
+}
+
+@media (max-width: 760px) {
+  .input-title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .input-book {
+    display: block;
+  }
+
+  .input-book .book-title {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .input-book .book-title input {
+    width: 90%;
+  }
+
+  .input-book .book-author {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .input-book .book-author input {
+    width: 90%;
+  }
+
+  .input-book .book-categ {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .input-book .book-categ input {
+    width: 90%;
+  }
+
+  .input-book .add-btn {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .input-book .add-btn button {
+    width: 90%;
+  }
 }
