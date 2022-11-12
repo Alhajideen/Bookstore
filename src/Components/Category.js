@@ -2,12 +2,12 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { checkStatus } from '../redux/categories/categories';
 
-function Category() {
+const Category = () => {
   const dispatch = useDispatch();
   const info = useSelector((state) => state.categories);
   const construction = info[0];
   return (
-    <div>
+    <div className="category">
       <h2>{construction}</h2>
       <button
         type="button"
@@ -17,6 +17,6 @@ function Category() {
       </button>
     </div>
   );
-}
+};
 
 export default Category;

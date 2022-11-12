@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 import { addBooks, getBooks } from '../redux/books/books';
 
-function InputBook() {
+const InputBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [cat, setCat] = useState('');
@@ -18,10 +18,16 @@ function InputBook() {
     dispatch(addBooks(newBook));
     setTimeout(() => {
       dispatch(getBooks());
-    }, 1000);
+      setTitle('');
+      setAuthor('');
+      setCat('');
+    }, 500);
   };
   return (
-    <div>
+    <div className="input-form">
+      <div className="input-title">
+        <h2>ADD NEW BOOK</h2>
+      </div>
       <form className="input-book">
         <div className="book-title">
           <input
@@ -39,7 +45,7 @@ function InputBook() {
             onChange={(e) => setAuthor(e.target.value)}
           />
         </div>
-        <div className="book-cat">
+        <div className="book-categ">
           <input
             type="text"
             placeholder="Book Category"
@@ -55,6 +61,6 @@ function InputBook() {
       </form>
     </div>
   );
-}
+};
 
 export default InputBook;
