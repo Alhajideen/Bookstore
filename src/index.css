@@ -274,6 +274,11 @@ html {
 }
 
 @media (max-width: 760px) {
+  .nav-bar .nav-links .logo {
+  color: #0290ff;
+  font-size: 15px;
+}
+
   .cmt-btn,
   .edit-btn,
   .circular-progress,
