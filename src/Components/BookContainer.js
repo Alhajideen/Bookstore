@@ -33,13 +33,17 @@ const BookContainer = () => {
                   <Book props={book} />
                 </div>
                 <div className="book-actions">
-                  <button type="button">Comments</button>
+                  <button className="cmt-btn" type="button">
+                    Comments
+                  </button>
                   <span className="border" />
                   <button type="button" onClick={() => handleRemove(book.id)}>
                     Remove
                   </button>
                   <span className="border" />
-                  <button type="button">Edit</button>
+                  <button className="edit-btn" type="button">
+                    Edit
+                  </button>
                 </div>
               </div>
               <div className="progress-bar">

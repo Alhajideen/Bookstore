@@ -274,9 +274,23 @@ html {
 }
 
 @media (max-width: 760px) {
+  .cmt-btn,
+  .edit-btn,
+  .circular-progress,
+  .book-actions .border,
+  .box-border {
+    display: none;
+  }
+
   .input-title {
     display: flex;
     justify-content: center;
+  }
+
+  .a-book,
+  .progress-bar,
+  .current {
+    width: 33%;
   }
 
   .input-book {
@@ -319,5 +333,15 @@ html {
 
   .input-book .add-btn button {
     width: 90%;
+  }
+
+  .update-btn {
+    background-color: #0290ff;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    color: #fff;
+    margin-top: 20px;
   }
 }

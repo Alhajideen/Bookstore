@@ -18,6 +18,9 @@ const InputBook = () => {
     dispatch(addBooks(newBook));
     setTimeout(() => {
       dispatch(getBooks());
+      setTitle('');
+      setAuthor('');
+      setCat('');
     }, 500);
   };
   return (

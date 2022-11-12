@@ -27,6 +27,16 @@ export const addBooks = createAsyncThunk('addBooks', async (obj) => {
     });
     return data.data;
   } catch (err) {
+    toast.error('Oooops! An error occured. Try again', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
     return err;
   }
 });
@@ -48,6 +58,16 @@ export const removeBook = createAsyncThunk('removeBook', async (id) => {
     });
     return data.data;
   } catch (err) {
+    toast.error('Oooops! An error occured. Try again', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
     return err;
   }
 });
