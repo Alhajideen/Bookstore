@@ -18,7 +18,9 @@ const BookContainer = () => {
 
   const handleRemove = (id) => {
     dispatch(removeBook(id));
-    dispatch(removeBooks(id));
+    setTimeout(() => {
+      dispatch(removeBooks(id));
+    }, 700);
   };
 
   return (
